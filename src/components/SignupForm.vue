@@ -16,7 +16,10 @@
     </select>
 
     <label>Skills:</label>
-    <input type="text" v-model="topSkills" />
+    <input type="text" v-model="tempSkill" @keyup.alt="addSkill" />
+    <div v-for="skill in skills" class="pill" :key="skill">
+      {{ skill }}
+    </div>
 
     <div class="terms">
       <input type="checkbox" required v-model="terms" />
@@ -35,8 +38,19 @@ export default {
       password: "",
       role: "",
       terms: false,
-      tempSkills: "",
+      tempSkill: "",
+      skills: [],
     };
+  },
+  methods: {
+    addSkill(e) {
+      if (e.key === "," && this.tempSkill) {
+        if (this.skills.includes(this.tempSkill)) {
+          this.skills.push(this.tempSkill);
+        }
+        this.tempSkill = "";
+      }
+    },
   },
 };
 // eslint-disable-next-line vue/comment-directive
