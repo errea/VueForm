@@ -6,6 +6,9 @@
     <label>Password:</label>
     <input type="password" required v-model="password" />
 
+    <label>Skills:</label>
+    <input type="text" v-model="topSkills" />
+
     <div class="terms">
       <input type="checkbox" required v-model="terms" />
       <label>Accept terms and conditions</label>
