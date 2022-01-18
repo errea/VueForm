@@ -6,6 +6,15 @@
     <label>Password:</label>
     <input type="password" required v-model="password" />
 
+    <label>Roles:</label>
+    <select v-model="vaule">
+      <option value="web developer">Web Developer</option>
+      <option value="designer">Designer</option>
+      <option value="Human">Human Resources Manager</option>
+      <option value="support">Technical Support</option>
+      <option value="recuriter">Technical recuriter</option>
+    </select>
+
     <label>Skills:</label>
     <input type="text" v-model="topSkills" />
 
